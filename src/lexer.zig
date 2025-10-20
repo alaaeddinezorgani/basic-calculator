@@ -22,7 +22,7 @@ pub const Lexer = struct {
     pub fn nextToken(self: *Lexer) Token {
         self.skipWhitespace();
 
-        const c = self.peek()
+        const c = self.peek();
         if (c == 0) return .{ .typ = .EOF };
         
         if (std.ascii.isDigit(c)) {
